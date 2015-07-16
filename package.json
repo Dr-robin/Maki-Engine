@@ -1,0 +1,8 @@
+{
+    "name": "Maki",
+    "version": "0.0.1",
+    "private": false,
+    "dependencies": {
+        "express": "4.13.1",
+  }
+}
