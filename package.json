@@ -14,8 +14,12 @@
     "NishikinoJS"
   ],
   "author": "Dr.robin of CREFFECT",
+  "license": "IDK",
   "bugs": {
     "url": "https://github.com/Dr-robin/NishikinoJS/issues"
   },
-  "homepage": "https://github.com/Dr-robin/NishikinoJS#readme"
+  "homepage": "https://github.com/Dr-robin/NishikinoJS#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
 }
