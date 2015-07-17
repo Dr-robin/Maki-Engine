@@ -1,8 +1,21 @@
 {
-    "name": "NishikinoJS",
-    "version": "0.0.1",
-    "private": false,
-    "dependencies": {
-        "express": "4.13.1"
-  }
+  "name": "nishikinojs",
+  "version": "0.0.1",
+  "description": "NishikinoJS는 node.js 기반 CMS입니다.",
+  "main": "maki.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dr-robin/NishikinoJS.git"
+  },
+  "keywords": [
+    "CMS",
+    "CREFFECT",
+    "Maki",
+    "NishikinoJS"
+  ],
+  "author": "Dr.robin of CREFFECT",
+  "bugs": {
+    "url": "https://github.com/Dr-robin/NishikinoJS/issues"
+  },
+  "homepage": "https://github.com/Dr-robin/NishikinoJS#readme"
 }
