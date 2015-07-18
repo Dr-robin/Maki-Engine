@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Dr-robin/Maki-Engine#readme",
   "dependencies": {
+    "ejs": "^2.3.3",
     "express": "^4.13.1",
     "node-mysql": "^0.4.2"
   }
