@@ -1,6 +1,7 @@
 var express = require("express"),
 	fs = require("fs"),
-	mysql = require("node-mysql");
+	mysql = require("node-mysql"),
+	ejs = require("ejs");
 
 var app = express();
 var listModule = [];
@@ -24,8 +25,21 @@ else {
 	console.log("설정파일을 찾을 수 없습니다.");
 }
 
+function renderEjs(res, path, dataObject) {
+	fs.readFile(path, function (err, data) {
+		if(!err) {
+			res.send(ejs.render(data, dataObject));
+		}
+	});
+}
+
 app.get("/", function (req, res) {
-	res.send("Hello, World!");
+	if(isUsable) {
+		//기본모듈을 불러와야 합니다.
+	}
+	else {
+		//초기 설정, 모듈 다운로드 등을 해야 합니다.
+	}
 });
 app.get("/:module", function (req, res) {
 	res.send(req.params.module);
