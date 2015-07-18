@@ -1,24 +1,23 @@
 {
-  "name": "nishikinojs",
+  "name": "maki-engine",
   "version": "0.0.1",
-  "description": "NishikinoJS는 node.js 기반 CMS입니다.",
+  "description": "Maki Engine은 node.js 기반 CMS입니다.",
   "main": "maki.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dr-robin/NishikinoJS.git"
+    "url": "git+https://github.com/Dr-robin/Maki-Engine.git"
   },
   "keywords": [
     "CMS",
     "CREFFECT",
-    "Maki",
-    "NishikinoJS"
+    "Maki"
   ],
   "author": "Dr.robin of CREFFECT",
   "license": "CC-BY-SA-4.0",
   "bugs": {
-    "url": "https://github.com/Dr-robin/NishikinoJS/issues"
+    "url": "https://github.com/Dr-robin/Maki-Engine/issues"
   },
-  "homepage": "https://github.com/Dr-robin/NishikinoJS#readme",
+  "homepage": "https://github.com/Dr-robin/Maki-Engine#readme",
   "dependencies": {
     "express": "^4.13.1",
     "node-mysql": "^0.4.2"
