@@ -14,12 +14,13 @@
     "NishikinoJS"
   ],
   "author": "Dr.robin of CREFFECT",
-  "license": "IDK",
+  "license": "CC-BY-SA-4.0",
   "bugs": {
     "url": "https://github.com/Dr-robin/NishikinoJS/issues"
   },
   "homepage": "https://github.com/Dr-robin/NishikinoJS#readme",
   "dependencies": {
-    "express": "^4.13.1"
+    "express": "^4.13.1",
+    "node-mysql": "^0.4.2"
   }
 }
