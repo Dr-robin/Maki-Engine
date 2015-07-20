@@ -1,7 +1,6 @@
 var express = require("express"),
 	fs = require("fs"),
-	mysql = require("node-mysql"),
-	ejs = require("ejs");
+	mysql = require("node-mysql");
 
 var app = express();
 var listModule = {};
@@ -25,10 +24,6 @@ else {
 	console.log("설정파일을 찾을 수 없습니다.");
 }
 
-function makeModuleListener(moduleName) {
-	var moduleListener = {};
-	moduleListener.get = function(path, listener) {};
-}
 global.loadModule = function(moduleName) {
 	if(!listModule[moduleName]) {
 		listModule[moduleName] = require("./module/" + moduleName + "/module.js");
