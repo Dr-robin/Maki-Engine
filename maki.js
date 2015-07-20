@@ -4,7 +4,7 @@ var express = require("express"),
 	ejs = require("ejs");
 
 var app = express();
-var listModule = [];
+var listModule = {};
 var sql;
 var tablePrefix = "";
 var isUsable = false; // 설치되지 않았으면 false
@@ -25,15 +25,18 @@ else {
 	console.log("설정파일을 찾을 수 없습니다.");
 }
 
-function renderEjs(res, path, dataObject) {
-	fs.readFile(path, function (err, data) {
-		if(!err) {
-			res.send(ejs.render(data, dataObject));
-		}
-	});
+function makeModuleListener(moduleName) {
+	var moduleListener = {};
+	moduleListener.get = function(path, listener) {};
 }
+global.loadModule = function(moduleName) {
+	if(!listModule[moduleName]) {
+		listModule[moduleName] = require("./module/" + moduleName + "/module.js");
+		listModule[moduleName].init();
+	}
+};
 
-app.get("/", function (req, res) {
+app.get("/", function(req, res) {
 	if(isUsable) {
 		//기본모듈을 불러와야 합니다.
 	}
@@ -41,10 +44,10 @@ app.get("/", function (req, res) {
 		//초기 설정, 모듈 다운로드 등을 해야 합니다.
 	}
 });
-app.get("/:module", function (req, res) {
-	res.send(req.params.module);
+app.get("*", function(req, res) {
+	// 여기에서 req.path의 값을 조사해서 적당한 모듈을 불러옵니다.
 });
 
-app.listen(80, function () {
+app.listen(80, function() {
 	console.log("Running...");
 });
