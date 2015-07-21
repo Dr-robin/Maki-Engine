@@ -1,3 +1,3 @@
 global.app.get("/", function(req, res) {
-	res.send("Maki Engine ¼³Ä¡ ÆäÀÌÁö");
+	res.send("Maki Engine ì„¤ì¹˜ í˜ì´ì§€");
 });
