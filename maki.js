@@ -1,6 +1,7 @@
 var express = require("express"),
 	fs = require("fs"),
-	mysql = require("node-mysql");
+	mysql = require("node-mysql"),
+	ejs = require("ejs");
 
 var app = express();
 var listModule = {};
@@ -22,26 +23,19 @@ if(fs.existsSync("config.json")) {
 }
 else {
 	console.log("설정파일을 찾을 수 없습니다.");
+	global.loadModule("setup");
 }
 
+app.set("view engine", "ejs");
+
+global.app = app;
+global.sql = sql;
 global.loadModule = function(moduleName) {
 	if(!listModule[moduleName]) {
 		listModule[moduleName] = require("./module/" + moduleName + "/module.js");
-		listModule[moduleName].init();
 	}
+	return listModule[moduleName];
 };
-
-app.get("/", function(req, res) {
-	if(isUsable) {
-		//기본모듈을 불러와야 합니다.
-	}
-	else {
-		//초기 설정, 모듈 다운로드 등을 해야 합니다.
-	}
-});
-app.get("*", function(req, res) {
-	// 여기에서 req.path의 값을 조사해서 적당한 모듈을 불러옵니다.
-});
 
 app.listen(80, function() {
 	console.log("Running...");
