@@ -1,3 +1,3 @@
 global.app.get("/", function(req, res) {
-	res.send("Maki Engine 설치 페이지");
+	res.render("setup/index");
 });
